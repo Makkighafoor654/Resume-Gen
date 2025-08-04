@@ -1,6 +1,6 @@
 import React from 'react';
 import { MdEmail } from 'react-icons/md';
-import { Phone, LocateIcon } from 'lucide-react';
+import { Phone, LocateIcon, Linkedin, LinkedinIcon } from 'lucide-react';
 
 const ModernMinimalTemplate = ({ data }) => {
   const {
@@ -15,7 +15,7 @@ const ModernMinimalTemplate = ({ data }) => {
     <section className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md mb-10">
       {/* Heading */}
       <div className="mb-6">
-        <h1 className="text-3xl font-bold text-gray-900">{personalInfo.fullName}</h1>
+        <h1 className="text-3xl font-bold text-sky-700">{personalInfo.fullName}</h1>
         <p className="text-gray-600">{personalInfo.summary}</p>
       </div>
 
@@ -26,7 +26,7 @@ const ModernMinimalTemplate = ({ data }) => {
           {personalInfo.email && (
             <p className="text-gray-800">
               <MdEmail className="inline mr-2 text-sky-600" />
-              <a href={`mailto:${personalInfo.email}`} className="text-sky-600 underline">
+              <a href={`mailto:${personalInfo.email}`}>
                 {personalInfo.email}
               </a>
             </p>
@@ -34,7 +34,7 @@ const ModernMinimalTemplate = ({ data }) => {
           {personalInfo.phone && (
             <p className="text-gray-800">
               <Phone className="inline h-4 w-4 mr-2 text-sky-600" />
-              <a href={`tel:${personalInfo.phone}`} className="text-sky-600 underline">
+              <a href={`tel:${personalInfo.phone}`}>
                 {personalInfo.phone}
               </a>
             </p>
@@ -45,17 +45,10 @@ const ModernMinimalTemplate = ({ data }) => {
               {personalInfo.location}
             </p>
           )}
-          {personalInfo.linkedin && (
+          {personalInfo.linkedIn && (
             <p className="text-gray-800">
-              LinkedIn:{' '}
-              <a
-                href={personalInfo.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sky-600 underline"
-              >
-                {personalInfo.linkedin}
-              </a>
+              <LinkedinIcon className="inline h-4 w-4 mr-2 text-sky-600" />
+                {personalInfo.linkedIn}
             </p>
           )}
           {personalInfo.github && (
@@ -98,7 +91,7 @@ const ModernMinimalTemplate = ({ data }) => {
                 key={idx}
                 className="bg-sky-100 text-sky-700 px-3 py-1 rounded-full text-sm"
               >
-                {skill.name}
+                {skill.skillName}
               </span>
             ))}
           </div>
